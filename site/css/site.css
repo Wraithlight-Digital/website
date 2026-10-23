@@ -222,3 +222,42 @@ section { position: relative; }
 
 h1, h2, h3 { text-wrap: balance; }
 p { text-wrap: pretty; }
+
+/* Status pill */
+.status { display: inline-flex; align-items: center; gap: 10px; margin: 0 0 22px; padding: 7px 14px; border-radius: 999px;
+  border: 1px solid rgba(242, 180, 90, 0.35); background: rgba(242, 180, 90, 0.08); color: var(--amber); font-size: 0.85rem; font-weight: 500; }
+.status .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--amber); box-shadow: 0 0 0 0 rgba(242, 180, 90, 0.6); animation: pulse 2.4s ease-out infinite; }
+@keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(242, 180, 90, 0.55); } 80%, 100% { box-shadow: 0 0 0 10px rgba(242, 180, 90, 0); } }
+@media (prefers-reduced-motion: reduce) { .status .dot { animation: none; } }
+
+/* Six service cards */
+.cards.six .card { position: relative; }
+@media (max-width: 1080px) and (min-width: 921px) { .cards.six { grid-template-columns: repeat(2, 1fr); } }
+.when { position: absolute; top: clamp(24px, 3vw, 34px); right: clamp(24px, 3vw, 34px); font-size: 0.72rem; font-weight: 500;
+  letter-spacing: 0.1em; text-transform: uppercase; color: var(--cream-dim); border: 1px solid var(--line); border-radius: 999px; padding: 4px 10px; }
+
+/* Workflow steps */
+.flow { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; position: relative; }
+.flow li { position: relative; display: flex; flex-direction: column; gap: 8px; padding: 24px; border-radius: var(--radius);
+  background: var(--navy-2); border: 1px solid var(--line); }
+.flow li:not(:last-child)::after { content: ""; position: absolute; top: 40px; right: -13px; width: 10px; height: 10px;
+  border-top: 2px solid var(--amber); border-right: 2px solid var(--amber); transform: rotate(45deg); z-index: 1; }
+.flow .n { width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center; background: var(--amber); color: var(--navy); font-weight: 600; font-size: 0.95rem; }
+.flow strong { font-weight: 500; font-size: 1.15rem; margin-top: 6px; }
+.flow li > span:last-child { color: var(--cream-dim); font-size: 0.95rem; }
+@media (max-width: 920px) {
+  .flow { grid-template-columns: 1fr; gap: 20px; }
+  .flow li:not(:last-child)::after { top: auto; bottom: -15px; right: auto; left: 38px; transform: rotate(135deg); }
+}
+.who { margin-top: clamp(40px, 5vw, 56px); }
+.who-label { margin: 0 0 14px; color: var(--cream-dim); font-size: 0.95rem; }
+.chips { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+.chips li { padding: 8px 16px; border-radius: 999px; border: 1px solid var(--cream-faint); font-size: 0.92rem; }
+
+/* Promises */
+.promises { list-style: none; padding: 0; margin: clamp(40px, 5vw, 56px) 0 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px 32px; }
+.promises li { color: var(--cream-dim); padding-left: 26px; position: relative; }
+.promises li::before { content: ""; position: absolute; left: 0; top: 0.55em; width: 12px; height: 12px; border-radius: 50%; border: 2px solid var(--amber); }
+.promises strong { color: var(--cream); font-weight: 500; }
+@media (max-width: 760px) { .promises { grid-template-columns: 1fr; } }
+.promises + .promise { margin-top: 32px; }
