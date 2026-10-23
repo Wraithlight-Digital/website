@@ -30,3 +30,6 @@ Change the HTML in `site/`, commit, push. Preview locally with `python3 -m http.
 
 ## Adding a page later
 Copy `privacy.html` as a starting point (it has the shared header and footer), then add the URL to `sitemap.xml`.
+
+## Updating styles
+When you change `css/site.css`, bump the `?v=` number on the stylesheet link in every HTML file so phones and browsers load the new version instead of a cached copy.
