@@ -4,12 +4,12 @@ Website for Wraithlight Digital LLC, a New Mexico AI and automation business. Pl
 
 ## Layout
 * `site/` everything that gets published. This is the folder Cloudflare serves.
-  * `index.html` the one page home: hero, services, approach, brands (WWII Dispatches), contact.
+  * `index.html` the one page home: hero, services, approach, brands (WW2 Dispatches), contact.
   * `privacy.html` plain language privacy policy (served at /privacy).
   * `404.html` not found page.
   * `css/site.css` all styles. Brand colors are variables at the top.
   * `fonts/` Outfit, self hosted (SIL Open Font License, see `fonts/OFL.txt`).
-  * `img/` logo, WWII Dispatches mark, and `og.png` (the 1200 x 630 share preview).
+  * `img/` logo, WW2 Dispatches mark, and `og.png` (the 1200 x 630 share preview).
   * favicons, `site.webmanifest`, `robots.txt`, `sitemap.xml`.
   * `_headers` Cloudflare security and caching headers.
 

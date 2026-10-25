@@ -273,3 +273,25 @@ p { text-wrap: pretty; }
   .brand-links { align-items: flex-start; }
   .icon-row { justify-content: flex-start; }
 }
+
+/* WW2 Dispatches deep dive */
+.card-link { display: inline-block; margin-top: 16px; font-size: 0.92rem; font-weight: 500; text-decoration: none; }
+.card-link::after { content: " \2192"; }
+.dispatch { margin-top: clamp(56px, 7vw, 88px); }
+.sub-head { max-width: 42em; margin: clamp(56px, 7vw, 80px) 0 clamp(24px, 3vw, 36px); }
+.dispatch > .sub-head:first-child { margin-top: 0; }
+.sub-head .eyebrow { margin-bottom: 10px; }
+.sub-head h3 { font-size: clamp(1.45rem, 2.4vw, 1.9rem); }
+.sub-head p { color: var(--cream-dim); margin: 12px 0 0; }
+.series { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+@media (max-width: 1000px) { .series { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .series { grid-template-columns: 1fr; } }
+.series-item { padding: 24px; border-radius: var(--radius); background: var(--navy-2); border: 1px solid var(--line); border-top: 3px solid var(--amber); }
+.series-code { display: block; color: var(--amber); font-weight: 500; font-size: 0.85rem; letter-spacing: 0.14em; margin-bottom: 10px; }
+.series-item h4 { margin: 0 0 8px; font-size: 1.2rem; font-weight: 500; }
+.series-item p { margin: 0; color: var(--cream-dim); font-size: 0.95rem; }
+.flow.five { grid-template-columns: repeat(5, 1fr); }
+@media (max-width: 1080px) and (min-width: 921px) { .flow.five li { padding: 20px; } }
+@media (max-width: 920px) { .flow.five { grid-template-columns: 1fr; } }
+.card .label { display: inline-block; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--amber); margin-bottom: 14px; }
+.dispatch .promise strong { font-weight: 500; color: var(--amber); }
